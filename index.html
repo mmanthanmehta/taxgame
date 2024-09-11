@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Quiz Game</title>
+    <link rel="stylesheet" href="loco.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-blur"></div>
+    
+    <div class="main">
+        <audio id="backgroundMusic" loop autoplay volume="0.1">
+            <source src="https://cdn.pixabay.com/audio/2023/05/02/audio_0ca06660b0.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="correctSound">
+            <source src="https://cdn.pixabay.com/audio/2023/04/02/audio_45a2f436c7.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="wrongSound">
+            <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7acc1c1ca7.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="gameOverSound">
+            <source src="https://cdn.pixabay.com/audio/2024/05/03/audio_27f06bd562.mp3" type="audio/mpeg">
+        </audio>
+        <div id="start-screen" class="screen">
+            <h1>Welcome to the Tax Quiz Game!</h1>
+            <button id="start-button" onclick="startGame()">Start Game</button>
+        </div>
+        <div id="game-container">
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            <div id="options">
+                <button id="option1" class="option-btn" onclick="answerQuestion(0)"></button>
+                <button id="option2" class="option-btn" onclick="answerQuestion(1)"></button>
+                <button id="option3" class="option-btn" onclick="answerQuestion(2)"></button>
+                <button id="option4" class="option-btn" onclick="answerQuestion(3)"></button>
+            </div>
+            <div id="info-bar">
+                <div id="timerDisplay" style="display: block;">Time Left: 60</div>
+                <div id="scoreDisplay">Score: 0</div>
+            </div>
+        </div>
+    
+        <div id="result-screen" class="hidden">
+            <h2>Your Final Score: <span id="finalScore"></span></h2>
+            <button class="re-btn" onclick="restartGame()">Restart Game</button>
+        </div>
+    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+        integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
